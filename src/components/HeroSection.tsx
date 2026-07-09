@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 const brands = [
   {
-    name: "Stripe",
+    name: "OKX.AI",
     style: {
       fontFamily: "Georgia, serif",
       fontWeight: 700,
@@ -11,7 +11,7 @@ const brands = [
     },
   },
   {
-    name: "Coinbase",
+    name: "X Layer",
     style: {
       fontFamily: "Arial, sans-serif",
       fontWeight: 900,
@@ -21,7 +21,7 @@ const brands = [
     },
   },
   {
-    name: "Uniswap",
+    name: "ERC-4337",
     style: {
       fontFamily: "'Trebuchet MS', sans-serif",
       fontWeight: 600,
@@ -31,7 +31,7 @@ const brands = [
     },
   },
   {
-    name: "Aave",
+    name: "MCP Protocol",
     style: {
       fontFamily: "'Courier New', monospace",
       fontWeight: 700,
@@ -41,7 +41,7 @@ const brands = [
     },
   },
   {
-    name: "Compound",
+    name: "x402",
     style: {
       fontFamily: "Palatino, 'Book Antiqua', serif",
       fontWeight: 400,
@@ -50,7 +50,7 @@ const brands = [
     },
   },
   {
-    name: "MakerDAO",
+    name: "DeepSeek V4",
     style: {
       fontFamily: "Impact, 'Arial Narrow', sans-serif",
       fontWeight: 400,
@@ -59,7 +59,7 @@ const brands = [
     },
   },
   {
-    name: "Chainlink",
+    name: "Solidity",
     style: {
       fontFamily: "Verdana, sans-serif",
       fontWeight: 700,
@@ -86,17 +86,17 @@ function HeroSection() {
           className="text-black text-5xl md:text-6xl font-medium leading-tight max-w-xl mb-4"
           style={{ letterSpacing: "-0.04em" }}
         >
-          Agents That
+          The Secure
           <br />
-          Move Money
+          Execution Fabric
         </h1>
         <p
           className="text-black/70 text-base md:text-lg max-w-md mb-8 leading-relaxed"
           style={{ fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }}
         >
-            The connective tissue of the on-chain economy. Autonomous agents
-            that move capital with zero friction using scoped, programmable
-            permissions.
+            A permissioned execution layer that provisions scoped session
+            keys to AI agents — cryptographically bounded by max spend, time
+            limit, and allowed actions. Never trusted. Always bounded.
         </p>
 
         <button

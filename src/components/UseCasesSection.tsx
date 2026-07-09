@@ -5,17 +5,17 @@ function UseCasesSection() {
     <section className="bg-[#F5F5F5] px-6 py-24">
       <div className="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         <div className="md:pr-12 md:pt-2">
-          <p className="text-black/60 text-sm mb-2">AgentFabric in Practice</p>
+          <p className="text-black/60 text-sm mb-2">Built for OKX.AI</p>
           <h2
             className="text-5xl md:text-6xl font-medium leading-none mb-6"
             style={{ letterSpacing: "-0.04em" }}
           >
-            Agent modes
+            The Workflow
           </h2>
           <p className="text-black/60 text-base leading-relaxed max-w-sm">
-            From finance copilots to autonomous treasury managers — AgentFabric
-            powers the next generation of on-chain AI agents with secure,
-            scoped execution.
+            A user posts a task. An ASP agent bids and wins. FabricX provisions
+            a scoped session key. The agent executes autonomously. Payment
+            settles on X Layer.
           </p>
         </div>
 
@@ -34,12 +34,13 @@ function UseCasesSection() {
               className="text-4xl md:text-5xl font-medium leading-tight mb-5"
               style={{ letterSpacing: "-0.03em" }}
             >
-              Finance Copilot
+              Task → Session → Execute
             </h3>
             <p className="text-black/70 text-base max-w-md mb-8">
-            Deploy an AI agent that executes trades, rebalances portfolios,
-            and hunts yield — all within scoped permissions you define. No
-            key exposure, no custody risk.
+            A user asks OKX.AI to &ldquo;buy 5 OKB of the top trending token.&rdquo;
+            FabricX provisions a session key scoped to 5.5 OKB max, 1-hour
+            expiry, swap-only. The agent queries markets, gets the best DEX
+            route, and settles — autonomously, safely, on X Layer.
             </p>
 
             <a

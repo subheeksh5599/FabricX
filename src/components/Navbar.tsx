@@ -1,6 +1,6 @@
 import LogoIcon from "./LogoIcon";
 
-const navLinks = ["Docs", "SDK", "Playground", "Ecosystem"];
+const navLinks = ["Docs", "Contracts", "SDK", "Playground"];
 
 function Navbar() {
   return (
@@ -9,7 +9,7 @@ function Navbar() {
         <div className="flex items-center gap-2">
           <LogoIcon className="w-7 h-7 text-white" />
           <span className="text-2xl font-medium tracking-tight text-white">
-            AgentFabric
+            FabricX
           </span>
         </div>
 

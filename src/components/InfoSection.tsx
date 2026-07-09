@@ -10,7 +10,7 @@ function InfoSection() {
               className="text-black text-4xl md:text-5xl font-medium leading-tight mb-8"
               style={{ letterSpacing: "-0.03em" }}
             >
-              Meet AgentFabric.
+              Meet FabricX.
             </h2>
             <button
               type="button"
@@ -23,9 +23,9 @@ function InfoSection() {
             </button>
           </div>
           <p className="text-black/70 text-2xl md:text-3xl leading-relaxed">
-            AgentFabric is a permissioned execution framework that lets AI
-            agents move on-chain capital autonomously — without ever exposing
-            your private keys.
+            FabricX provisions scoped session keys that let AI agents execute
+            token swaps, query markets, and settle on X Layer — all without
+            ever exposing the user's private key.
           </p>
         </div>
 
@@ -43,35 +43,35 @@ function InfoSection() {
               className="text-black text-2xl font-medium leading-snug"
               style={{ letterSpacing: "-0.02em" }}
             >
-              Scoped execution
+              Scoped Session Keys
             </h3>
             <p className="text-black/70 text-base max-w-xs mt-4">
-              Grant agents programmatic spending limits, whitelist target
-              contracts, and revoke access at any time — all managed on-chain.
+              Every agent gets a cryptographically bounded key: max spend,
+              expiry, and whitelisted actions enforced by the X Layer EVM.
             </p>
           </div>
 
           <div className="bg-[#2B2644] rounded-2xl p-7 min-h-80 flex flex-col justify-between">
             <h3 className="text-white text-2xl font-medium leading-snug">
-              Wallet-safe,
+              MCP Server,
               <br />
-              key-free.
+              native tools.
             </h3>
             <p className="text-white/60 text-base mt-4">
-              Agents execute trades without ever touching your private key.
-              Permissioned sessions isolate authority — your wallet stays yours.
+              Plug into any MCP-compatible agent. Trending tokens, swap quotes,
+              on-chain execution — all through typed tool contracts.
             </p>
           </div>
 
           <div className="bg-[#2B2644] rounded-2xl p-7 min-h-80 flex flex-col justify-between">
             <h3 className="text-white text-2xl font-medium leading-snug">
-              MCP-native
+              x402-powered
               <br />
-              tooling
+              monetization
             </h3>
             <p className="text-white/60 text-base mt-4">
-              Plug agents into any MCP-compatible surface. Swap, stake, bridge,
-              or pay — all through typed, composable tool contracts.
+              Wrap any API call with usage-based settlement. Agents pay per
+              call. ASPs earn per task. Revenue built in from day zero.
             </p>
           </div>
         </div>

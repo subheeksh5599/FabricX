@@ -1,6 +1,6 @@
 const backers = [
   {
-    name: "Fundamental Labs",
+    name: "OKX DEX Aggregator",
     style: {
       fontFamily: "'Times New Roman', serif",
       fontWeight: 400,
@@ -9,7 +9,7 @@ const backers = [
     },
   },
   {
-    name: "KUCOIN",
+    name: "X LAYER",
     style: {
       fontFamily: "'Arial Black', sans-serif",
       fontWeight: 900,
@@ -18,7 +18,7 @@ const backers = [
     },
   },
   {
-    name: "NGC",
+    name: "OpenCode",
     style: {
       fontFamily: "Impact, sans-serif",
       fontWeight: 700,
@@ -27,7 +27,7 @@ const backers = [
     },
   },
   {
-    name: "NxGen",
+    name: "DeepSeek",
     style: {
       fontFamily: "Georgia, serif",
       fontWeight: 600,
@@ -36,7 +36,7 @@ const backers = [
     },
   },
   {
-    name: "Matter Labs",
+    name: "Hardhat",
     style: {
       fontFamily: "Helvetica, sans-serif",
       fontWeight: 700,
@@ -45,7 +45,7 @@ const backers = [
     },
   },
   {
-    name: "DEXTools",
+    name: "SOLIDITY",
     style: {
       fontFamily: "Verdana, sans-serif",
       fontWeight: 700,
@@ -55,7 +55,7 @@ const backers = [
     },
   },
   {
-    name: "NGRAVE",
+    name: "Node.js",
     style: {
       fontFamily: "'Courier New', monospace",
       fontWeight: 700,
@@ -64,7 +64,7 @@ const backers = [
     },
   },
   {
-    name: "Polychain",
+    name: "TypeScript",
     style: {
       fontFamily: "Palatino, serif",
       fontWeight: 500,
@@ -79,9 +79,9 @@ function BackedBySection() {
     <section className="bg-[#F5F5F5] px-6 py-16">
       <div className="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
         <p className="text-black/70 text-base leading-relaxed">
-          Funded by premier partners
+          Built for the OKX.AI
           <br />
-          and forward-thinking leaders.
+          Genesis Hackathon
         </p>
 
         <div className="md:col-span-3 overflow-hidden">
