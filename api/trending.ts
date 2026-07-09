@@ -1,8 +1,8 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+
 
 const OKX_BASE = "https://www.okx.com";
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: any, res: any) {
   try {
     const limit = Math.min(Number(req.query.limit) || 10, 50);
     const response = await fetch(`${OKX_BASE}/api/v5/market/tickers?instType=SPOT`);

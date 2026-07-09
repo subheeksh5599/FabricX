@@ -1,8 +1,8 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+
 
 const OKX_BASE = "https://www.okx.com";
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: any, res: any) {
   try {
     const symbol = String(req.query.symbol || "OKB").toUpperCase();
     const response = await fetch(`${OKX_BASE}/api/v5/market/ticker?instId=${symbol}-USDT`);

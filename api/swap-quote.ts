@@ -1,8 +1,8 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+
 
 const OKX_BASE = "https://www.okx.com";
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: any, res: any) {
   try {
     const { fromTokenAddress, toTokenAddress, amount, slippage = "0.5" } = req.query;
     if (!fromTokenAddress || !toTokenAddress || !amount) {

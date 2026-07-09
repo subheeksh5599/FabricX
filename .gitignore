@@ -6,3 +6,4 @@ typechain-types
 .env
 coverage
 coverage.json
+.vercel
