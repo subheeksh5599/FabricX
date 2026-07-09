@@ -9,7 +9,8 @@
     "dev": "tsc && node dist/index.js"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0"
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "viem": "^2.55.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
