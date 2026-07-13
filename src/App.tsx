@@ -3,6 +3,8 @@ import HeroSection from "./components/HeroSection";
 import InfoSection from "./components/InfoSection";
 import BackedBySection from "./components/BackedBySection";
 import UseCasesSection from "./components/UseCasesSection";
+import CTASection from "./components/CTASection";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <InfoSection />
       <BackedBySection />
       <UseCasesSection />
+      <CTASection />
+      <Footer />
     </div>
   );
 }

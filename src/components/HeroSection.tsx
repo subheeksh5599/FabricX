@@ -99,15 +99,15 @@ function HeroSection() {
             limit, and allowed actions. Never trusted. Always bounded.
         </p>
 
-        <button
-          type="button"
+        <a
+          href="#playground"
           className="inline-flex items-center gap-3 bg-black text-white text-base md:text-lg font-medium pl-8 pr-2 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200"
         >
           Launch Agent
           <span className="bg-white rounded-full p-2">
             <ArrowRight className="w-5 h-5 text-black" />
           </span>
-        </button>
+        </a>
 
         <div className="mt-16 w-full max-w-md overflow-hidden">
           <style>{`

@@ -25,12 +25,12 @@ function Navbar() {
           ))}
         </div>
 
-        <button
-          type="button"
+        <a
+          href="#playground"
           className="bg-white text-black text-base font-medium px-7 py-2.5 rounded-full hover:bg-gray-200 transition-colors duration-200"
         >
           Launch Agent
-        </button>
+        </a>
       </div>
     </nav>
   );
