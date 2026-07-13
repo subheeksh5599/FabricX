@@ -1,6 +1,4 @@
-
-
-export default async function handler(req: any, res: any) {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed. Use POST." });
   }
@@ -29,7 +27,7 @@ export default async function handler(req: any, res: any) {
       taskId: taskId || null,
       status: "provisioned",
     });
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({ error: err.message });
   }
 }

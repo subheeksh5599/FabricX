@@ -1,8 +1,6 @@
-
-
 const OKX_BASE = "https://www.okx.com";
 
-export default async function handler(req: any, res: any) {
+export default async function handler(req, res) {
   try {
     const { fromTokenAddress, toTokenAddress, amount, slippage = "0.5" } = req.query;
     if (!fromTokenAddress || !toTokenAddress || !amount) {
@@ -24,10 +22,10 @@ export default async function handler(req: any, res: any) {
       fromAmount: q.fromTokenAmount,
       toAmount: q.toTokenAmount,
       priceImpact: q.priceImpactPercentage || "0",
-      route: (q.routerList || []).map((r: any) => r.dexName),
+      route: (q.routerList || []).map((r) => r.dexName),
       estimatedGas: q.estimatedGas || "0",
     });
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({ error: err.message });
   }
 }

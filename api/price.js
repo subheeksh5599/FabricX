@@ -1,8 +1,6 @@
-
-
 const OKX_BASE = "https://www.okx.com";
 
-export default async function handler(req: any, res: any) {
+export default async function handler(req, res) {
   try {
     const symbol = String(req.query.symbol || "OKB").toUpperCase();
     const response = await fetch(`${OKX_BASE}/api/v5/market/ticker?instId=${symbol}-USDT`);
@@ -21,7 +19,7 @@ export default async function handler(req: any, res: any) {
       low24h: t.low24h,
       volume24h: t.vol24h,
     });
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({ error: err.message });
   }
 }
