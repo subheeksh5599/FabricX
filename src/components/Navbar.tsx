@@ -1,4 +1,3 @@
-import LogoIcon from "./LogoIcon";
 
 const navLinks = ["Docs", "Contracts", "SDK", "Playground"];
 
@@ -6,12 +5,9 @@ function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-20 px-6 py-4 bg-black/30 border-b border-white/10" style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1)" }}>
       <div className="max-w-[88rem] mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <LogoIcon className="w-7 h-7 text-white" />
-          <span className="text-2xl font-medium tracking-tight text-white">
-            FabricX
-          </span>
-        </div>
+        <span className="text-2xl font-medium tracking-tight text-white">
+          FabricX
+        </span>
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
