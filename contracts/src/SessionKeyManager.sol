@@ -83,4 +83,9 @@ contract SessionKeyManager {
     function sessionExists(bytes32 sessionId) external view returns (bool) {
         return sessions[sessionId].isActive;
     }
+
+    function isActive(bytes32 sessionId) external view returns (bool) {
+        Session storage session = sessions[sessionId];
+        return session.isActive && block.timestamp <= session.expiresAt;
+    }
 }

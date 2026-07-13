@@ -83,4 +83,20 @@ describe("FabricXAccount", function () {
     const balance = await publicClient.getBalance({ address: account.address });
     expect(balance).to.equal(parseEther("1"));
   });
+
+  it("isSessionActive returns true for active session", async function () {
+    const { account, owner } = await deploy();
+    const sessionId = keccak256(toHex("agent-session-active"));
+    const expiresAt = BigInt(Math.floor(Date.now() / 1000) + 3600);
+
+    await account.write.addSessionKey([
+      sessionId,
+      parseEther("5"),
+      expiresAt,
+      [keccak256(toHex("swap"))],
+    ], { account: owner.account });
+
+    const active = await account.read.isSessionActive([sessionId]);
+    expect(active).to.be.true;
+  });
 });

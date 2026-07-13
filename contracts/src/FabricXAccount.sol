@@ -9,6 +9,7 @@ interface ISessionKeyManager {
     function recordSpend(bytes32 sessionId, uint256 amount) external;
     function createSession(bytes32 sessionId, address account, uint256 maxSpend, uint256 expiresAt, bytes32[] calldata allowedActions) external;
     function revokeSession(bytes32 sessionId) external;
+    function isActive(bytes32 sessionId) external view returns (bool);
 }
 
 contract FabricXAccount {
@@ -38,10 +39,11 @@ contract FabricXAccount {
         bytes32 sessionId,
         address to,
         uint256 value,
-        bytes calldata data
+        bytes calldata data,
+        bytes32 action
     ) external returns (bytes memory) {
         require(
-            sessionManager.validateSession(sessionId, value, bytes32(0)),
+            sessionManager.validateSession(sessionId, value, action),
             "Session validation failed"
         );
 
@@ -80,8 +82,8 @@ contract FabricXAccount {
         return recovered == owner;
     }
 
-    function getActiveSessions() external view returns (bytes32[] memory) {
-        revert("Not implemented: query via SessionKeyManager events");
+    function isSessionActive(bytes32 sessionId) external view returns (bool) {
+        return sessionManager.isActive(sessionId);
     }
 
     receive() external payable {}

@@ -130,4 +130,25 @@ describe("SessionKeyManager", function () {
     const session = await sessionManager.read.getSession([sessionId]);
     expect(session.isActive).to.be.false;
   });
+
+  it("isActive returns true for active session and false for revoked", async function () {
+    const { sessionManager, owner } = await deploy();
+    const sessionId = keccak256(toHex("session-isactive"));
+    const expiresAt = BigInt(Math.floor(Date.now() / 1000) + 3600);
+
+    await sessionManager.write.createSession([
+      sessionId,
+      owner.account.address,
+      parseEther("100"),
+      expiresAt,
+      [keccak256(toHex("swap"))],
+    ]);
+
+    const active = await sessionManager.read.isActive([sessionId]);
+    expect(active).to.be.true;
+
+    await sessionManager.write.revokeSession([sessionId], { account: owner.account });
+    const afterRevoke = await sessionManager.read.isActive([sessionId]);
+    expect(afterRevoke).to.be.false;
+  });
 });

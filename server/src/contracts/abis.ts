@@ -60,6 +60,13 @@ export const SessionKeyManagerAbi = [
     ],
     stateMutability: "view",
   },
+  {
+    type: "function",
+    name: "isActive",
+    inputs: [{ name: "sessionId", type: "bytes32" }],
+    outputs: [{ name: "", type: "bool" }],
+    stateMutability: "view",
+  },
 ] as const;
 
 export const FabricXAccountAbi = [
@@ -90,6 +97,7 @@ export const FabricXAccountAbi = [
       { name: "to", type: "address" },
       { name: "value", type: "uint256" },
       { name: "data", type: "bytes" },
+      { name: "action", type: "bytes32" },
     ],
     outputs: [{ name: "", type: "bytes" }],
     stateMutability: "nonpayable",
@@ -99,6 +107,13 @@ export const FabricXAccountAbi = [
     name: "owner",
     inputs: [],
     outputs: [{ name: "", type: "address" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "isSessionActive",
+    inputs: [{ name: "sessionId", type: "bytes32" }],
+    outputs: [{ name: "", type: "bool" }],
     stateMutability: "view",
   },
 ] as const;
