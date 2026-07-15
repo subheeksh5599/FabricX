@@ -11,6 +11,9 @@
     "contracts:compile": "npm run compile --prefix contracts",
     "contracts:test": "npm run test --prefix contracts",
     "contracts:deploy": "npm run deploy --prefix contracts",
+    "contracts:deploy:arbitrum": "CHAIN=arbitrum_sepolia npx hardhat run script/deploy-multichain.ts --network arbitrum_sepolia",
+    "contracts:deploy:base": "CHAIN=base_sepolia npx hardhat run script/deploy-multichain.ts --network base_sepolia",
+    "contracts:deploy:op": "CHAIN=op_sepolia npx hardhat run script/deploy-multichain.ts --network op_sepolia",
     "server:build": "npm run build --prefix server",
     "server:start": "npm run start --prefix server"
   },

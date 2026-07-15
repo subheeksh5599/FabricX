@@ -18,6 +18,22 @@ const config: HardhatUserConfig = {
       chainId: 1952,
       accounts: [PRIVATE_KEY],
     },
+    // Phase 3: Multi-chain deployments
+    arbitrum_sepolia: {
+      url: process.env.ARBITRUM_SEPOLIA_RPC || "https://sepolia-rollup.arbitrum.io/rpc",
+      chainId: 421614,
+      accounts: [PRIVATE_KEY],
+    },
+    base_sepolia: {
+      url: process.env.BASE_SEPOLIA_RPC || "https://sepolia.base.org",
+      chainId: 84532,
+      accounts: [PRIVATE_KEY],
+    },
+    op_sepolia: {
+      url: process.env.OP_SEPOLIA_RPC || "https://sepolia.optimism.io",
+      chainId: 11155420,
+      accounts: [PRIVATE_KEY],
+    },
   },
   paths: {
     sources: "./src",
