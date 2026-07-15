@@ -117,3 +117,28 @@ export const FabricXAccountAbi = [
     stateMutability: "view",
   },
 ] as const;
+
+// Phase 4 ABIs
+export const ASPReputationAbi = [
+  { type: "function", name: "register", inputs: [], outputs: [], stateMutability: "nonpayable" },
+  { type: "function", name: "rate", inputs: [
+    { name: "asp", type: "address" }, { name: "score", type: "uint8" }, { name: "comment", type: "string" }
+  ], outputs: [], stateMutability: "nonpayable" },
+  { type: "function", name: "getAverageRating", inputs: [{ name: "asp", type: "address" }], outputs: [{ name: "", type: "uint256" }], stateMutability: "view" },
+  { type: "function", name: "getRatingCount", inputs: [{ name: "asp", type: "address" }], outputs: [{ name: "", type: "uint256" }], stateMutability: "view" },
+] as const;
+
+export const EscrowPaymentsAbi = [
+  { type: "function", name: "createEscrow", inputs: [
+    { name: "escrowId", type: "bytes32" }, { name: "asp", type: "address" }, { name: "deadline", type: "uint256" }
+  ], outputs: [], stateMutability: "payable" },
+  { type: "function", name: "releaseFunds", inputs: [{ name: "escrowId", type: "bytes32" }], outputs: [], stateMutability: "nonpayable" },
+  { type: "function", name: "refund", inputs: [{ name: "escrowId", type: "bytes32" }], outputs: [], stateMutability: "nonpayable" },
+  { type: "function", name: "getEscrow", inputs: [{ name: "escrowId", type: "bytes32" }], outputs: [
+    { name: "", type: "tuple", components: [
+      { name: "user", type: "address" }, { name: "asp", type: "address" }, { name: "amount", type: "uint256" },
+      { name: "token", type: "address" }, { name: "deadline", type: "uint256" },
+      { name: "released", type: "bool" }, { name: "refunded", type: "bool" }
+    ]}
+  ], stateMutability: "view" },
+] as const;

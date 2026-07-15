@@ -228,11 +228,16 @@ npm run server:start  # Starts on stdio (MCP transport)
 
 ### Deployed Addresses (X Layer Testnet)
 
-| Contract | Address | Explorer |
-|----------|---------|----------|
-| SessionKeyManager | `0xdaaa7d3a220ca3012ddc3af00acd7a894396c37b` | [View on Explorer](https://www.okx.com/web3/explorer/xlayer-testnet/address/0xdaaa7d3a220ca3012ddc3af00acd7a894396c37b) |
-| FabricXAccount | `0x119dbff5abdfd651ae13e972a012dc09bedb539c` | [View on Explorer](https://www.okx.com/web3/explorer/xlayer-testnet/address/0x119dbff5abdfd651ae13e972a012dc09bedb539c) |
-| Deployer | `0x76092779c93a9a303aD2Ad2C4606415040CDa79d` | — |
+| Phase | Contract | Address |
+|-------|----------|---------|
+| 1 | SessionKeyManager | `0xf1b32d46739a5e85b8991b75012237be635fa2ee` |
+| 1 | FabricXAccount | `0x61314ce9442800e8106ee7d2b6570f2e14de7367` |
+| 2 | SessionKeyManagerV2 | `0x7b7a4d155af23ecaa465e5bb575630e5060dfe03` |
+| 4 | ASPReputation | `0x312bbf4be9f77b72a4d9dfd0bfe09dad8e45b274` |
+| 4 | SLAEnforcement | `0x4708b589d64f2794cf0a85eb998c7808e9a997f2` |
+| 4 | EscrowPayments | `0x45fa2828eb16f8edcc85d028482c1aca67d83386` |
+
+All deployed from `0x7609...a79d` — [view all on X Layer Explorer](https://www.okx.com/web3/explorer/xlayer-testnet/address/0x76092779c93a9a303aD2Ad2C4606415040CDa79d)
 
 ### SessionKeyManager
 
@@ -310,13 +315,18 @@ Add FabricX to your agent's MCP config:
 }
 ```
 
-| Tool | Description | x402 Price |
-|------|-------------|------------|
-| `get_trending_tokens` | Fetch real-time trending tokens from OKX spot market | 0.001 OKB |
-| `get_token_price` | Get current price and 24h stats for a token | 0.001 OKB |
-| `get_swap_quote` | Get a swap quote from OKX DEX aggregator (read-only) | 0.001 OKB |
-| `swap_tokens` | Execute a token swap on X Layer via OKX DEX (requires scoped session) | 0.001 OKB |
-| `create_session` | Provision a new scoped session key for an agent task | 0.001 OKB |
+| Tool | Description | Phase | x402 Price |
+|------|-------------|-------|------------|
+| `get_trending_tokens` | Fetch real-time trending tokens from OKX spot market | 1 | 0.001 OKB |
+| `get_token_price` | Get current price and 24h stats for a token | 1 | 0.001 OKB |
+| `get_swap_quote` | Get a swap quote from OKX DEX aggregator (read-only) | 1 | 0.001 OKB |
+| `swap_tokens` | Execute a token swap on X Layer via OKX DEX (requires scoped session) | 1 | 0.001 OKB |
+| `create_session` | Provision a new scoped session key for an agent task | 1 | 0.001 OKB |
+| `bridge_tokens` | Bridge tokens cross-chain via OKX Bridge (requires scoped session) | 2 | 0.005 OKB |
+| `rate_asp` | Rate an Agent Service Provider on-chain (1-5 stars) | 4 | 0.001 OKB |
+| `get_asp_reputation` | Get an ASP's on-chain reputation score | 4 | 0.001 OKB |
+| `create_escrow` | Create an escrow payment for a task | 4 | 0.001 OKB |
+| `release_escrow` | Release escrow payment to ASP after completion | 4 | 0.001 OKB |
 
 All tools return `_x402` metadata in the response with `amount` and `currency` fields.
 
@@ -324,12 +334,16 @@ All tools return `_x402` metadata in the response with `amount` and `currency` f
 
 ## API Routes (Vercel Serverless)
 
-| Route | Method | Description |
-|-------|--------|-------------|
-| `/api/trending?limit=10` | GET | Trending tokens from OKX |
-| `/api/price?symbol=OKB` | GET | Token price and 24h stats |
-| `/api/swap-quote?fromTokenAddress=...&toTokenAddress=...&amount=...` | GET | DEX swap quote |
-| `/api/session` | POST | Provision a session key |
+| Route | Method | Phase | Description |
+|-------|--------|-------|-------------|
+| `/api/trending?limit=10` | GET | 1 | Trending tokens from OKX |
+| `/api/price?symbol=OKB` | GET | 1 | Token price and 24h stats |
+| `/api/swap-quote?fromTokenAddress=...&toTokenAddress=...&amount=...` | GET | 1 | DEX swap quote |
+| `/api/session` | POST | 1 | Provision a session key |
+| `/api/bridge` | POST | 2 | Initiate cross-chain bridge |
+| `/api/reputation` | POST | 4 | Submit ASP rating |
+| `/api/reputation-get?aspAddress=...` | GET | 4 | Get ASP reputation |
+| `/api/escrow` | POST | 4 | Create escrow payment |
 
 All routes include `X-X402-Price` and `X-X402-Currency` response headers.
 
@@ -375,9 +389,9 @@ FabricX/
 | Phase | What | Status |
 |-------|------|--------|
 | **Phase 1** — Hackathon MVP | Scoped session keys, MCP server, OKX DEX integration, x402 monetization | ✅ Done |
-| **Phase 2** — Expanded actions | Bridge, stake, lend actions; multi-token spend tracking; gas abstraction | 🔜 Planned |
-| **Phase 3** — Multi-chain | Deploy to ETH L2s (Arbitrum, Base, OP); cross-chain session keys via CCIP | 📋 Backlog |
-| **Phase 4** — Agent marketplace | On-chain ASP reputation, SLA enforcement, escrow-based task payments | 📋 Backlog |
+| **Phase 2** — Expanded Actions | Multi-token spend tracking, gas abstraction, bridge tool, SessionKeyManagerV2 | ✅ Done |
+| **Phase 3** — Multi-chain | Deploy to ETH L2s (Arbitrum, Base, OP); cross-chain session keys via CCIP | 🔜 Planned |
+| **Phase 4** — Agent Marketplace | On-chain ASP reputation, SLA enforcement, escrow-based task payments | ✅ Done |
 
 ---
 
