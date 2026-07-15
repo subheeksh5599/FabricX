@@ -230,8 +230,11 @@ npm run server:start  # Starts on stdio (MCP transport)
 
 | Contract | Address | Explorer |
 |----------|---------|----------|
-| SessionKeyManager | `0x779ded0c9e1022225f8e0630b35a9b54be713736` | [View on Explorer](https://www.okx.com/web3/explorer/xlayer-testnet/address/0x779ded0c9e1022225f8e0630b35a9b54be713736) |
-| FabricXAccount | *(deploy after SessionKeyManager)* | — |
+| SessionKeyManager | `0xdaaa7d3a220ca3012ddc3af00acd7a894396c37b` | [View on Explorer](https://www.okx.com/web3/explorer/xlayer-testnet/address/0xdaaa7d3a220ca3012ddc3af00acd7a894396c37b) |
+| FabricXAccount | `0x119dbff5abdfd651ae13e972a012dc09bedb539c` | [View on Explorer](https://www.okx.com/web3/explorer/xlayer-testnet/address/0x119dbff5abdfd651ae13e972a012dc09bedb539c) |
+| Deployer | `0x76092779c93a9a303aD2Ad2C4606415040CDa79d` | Created for this project |
+
+> These addresses are deterministic from deployer `0x7609...a79d` at nonce 0 and 1. To deploy on real testnet, fund the deployer wallet with testnet OKB from the [X Layer Faucet](https://web3.okx.com/xlayer/faucet) then run `npm run contracts:deploy`.
 
 ### SessionKeyManager
 
