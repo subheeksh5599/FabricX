@@ -1,4 +1,6 @@
 const OKX_BASE = "https://www.okx.com";
+const X402_RATE = "1";
+const X402_CURRENCY = "USDT";
 
 export default async function handler(req, res) {
   try {
@@ -16,9 +18,15 @@ export default async function handler(req, res) {
       chain: "X Layer",
     }));
 
-    res.setHeader("X-X402-Price", "1");
-    res.setHeader("X-X402-Currency", "USDT");
-    res.status(200).json({ tokens });
+    const payload = {
+      tokens,
+      _x402: { amount: X402_RATE, currency: X402_CURRENCY },
+    };
+
+    res.setHeader("X-X402-Price", X402_RATE);
+    res.setHeader("X-X402-Currency", X402_CURRENCY);
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(payload);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
