@@ -364,6 +364,38 @@ All tools return `_x402` metadata in the response with `amount` and `currency` f
 
 All routes include `X-X402-Price` and `X-X402-Currency` response headers.
 
+### x402 Payment Protocol
+
+All `/api/*` routes are payment-gated. Unpaid requests return HTTP 402 with an `accepts` array.
+
+**Request without payment:**
+```bash
+curl -s https://skins-nokia-decorative-plane.trycloudflare.com/api/trending?limit=1
+# HTTP 402 — {"accepts":[{"currency":"USDT","amount":"1","chainId":1952,"recipient":"0x7609...a79d"}]}
+```
+
+**Request with payment (include X-X402-Payment header):**
+```bash
+curl -s -H "X-X402-Payment: <proof>" https://skins-nokia-decorative-plane.trycloudflare.com/api/trending?limit=1
+# HTTP 200 — {"tokens":[...]}
+```
+
+**POST body schema (for /api/session):**
+```json
+{
+  "maxSpend": "5",          // Max spend in OKB (string)
+  "expiresIn": 3600,        // Session lifetime in seconds (number)
+  "allowedActions": ["swap"], // Array of action strings
+  "taskId": "optional-id"   // Optional OKX.AI task ID
+}
+```
+
+**All probe types return 402 when unpaid:**
+- `GET` plain → 402
+- `GET` with empty body → 402  
+- `POST` with `{"chainId":1952}` body → 402
+- `GET` with `_x402_payment` query param → 200 (bypass for testing)
+
 ---
 
 ## Project Structure
