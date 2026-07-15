@@ -41,7 +41,9 @@ function CTASection() {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="#"
+                href="https://github.com/subheeksh5599/FabricX#readme"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-black text-white text-base font-medium pl-8 pr-2 py-2 rounded-full hover:bg-gray-800 transition-colors duration-200"
               >
                 Read the Docs

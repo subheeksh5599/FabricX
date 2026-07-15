@@ -44,7 +44,9 @@ function UseCasesSection() {
             </p>
 
             <a
-              href="#"
+              href="https://github.com/subheeksh5599/FabricX#readme"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 group"
             >
               <span className="w-9 h-9 rounded-full bg-white/80 backdrop-blur flex items-center justify-center group-hover:bg-white transition-colors duration-200">
