@@ -19,8 +19,6 @@ contract FabricXAccount {
     address public owner;
     ISessionKeyManager public sessionManager;
 
-    mapping(bytes32 => bool) private executedOps;
-
     event ExecutedFromSession(bytes32 indexed sessionId, address indexed to, uint256 value);
     event SessionKeyAdded(bytes32 indexed sessionId);
     event SessionKeyRevoked(bytes32 indexed sessionId);

@@ -69,6 +69,9 @@ describe("SLAEnforcement", function () {
     const slaId = `0x${"e1".repeat(32)}` as `0x${string}`;
     const deadline = BigInt(Math.floor(Date.now() / 1000) + 86400);
 
+    // Add evaluator
+    await sla.write.addEvaluator([evaluator.account.address]);
+
     await sla.write.createSLA(
       [slaId, user.account.address, deadline, deliverableHash],
       { value: parseEther("1"), account: asp.account }

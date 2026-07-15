@@ -18,6 +18,16 @@ contract SLAEnforcement {
 
     mapping(bytes32 => SLA) public slas;
     uint256 public slaCount;
+    mapping(address => bool) public evaluators;
+    address public owner;
+
+    modifier onlyOwner() { require(msg.sender == owner, "Not owner"); _; }
+    modifier onlyEvaluator() { require(evaluators[msg.sender], "Not evaluator"); _; }
+
+    constructor() { owner = msg.sender; }
+
+    function addEvaluator(address e) external onlyOwner { evaluators[e] = true; }
+    function removeEvaluator(address e) external onlyOwner { evaluators[e] = false; }
 
     event SLACreated(bytes32 indexed slaId, address indexed user, address indexed asp, uint256 stake, uint256 deadline);
     event Delivered(bytes32 indexed slaId);
@@ -78,8 +88,8 @@ contract SLAEnforcement {
     function resolve(
         bytes32 slaId,
         bool aspAtFault,
-        uint256 slashPercent // 0-100, percentage of stake to slash
-    ) external {
+        uint256 slashPercent
+    ) external onlyEvaluator {
         SLA storage s = slas[slaId];
         require(s.disputed, "Not disputed");
         require(!s.resolved, "Already resolved");

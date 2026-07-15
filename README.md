@@ -230,12 +230,12 @@ npm run server:start  # Starts on stdio (MCP transport)
 
 | Phase | Contract | Address |
 |-------|----------|---------|
-| 1 | SessionKeyManager | `0xf1b32d46739a5e85b8991b75012237be635fa2ee` |
-| 1 | FabricXAccount | `0x61314ce9442800e8106ee7d2b6570f2e14de7367` |
-| 2 | SessionKeyManagerV2 | `0x7b7a4d155af23ecaa465e5bb575630e5060dfe03` |
-| 4 | ASPReputation | `0x312bbf4be9f77b72a4d9dfd0bfe09dad8e45b274` |
-| 4 | SLAEnforcement | `0x4708b589d64f2794cf0a85eb998c7808e9a997f2` |
-| 4 | EscrowPayments | `0x45fa2828eb16f8edcc85d028482c1aca67d83386` |
+| 1 | SessionKeyManager | `0xb9d40b7d02c8855d7d1638991fa3af151d16f6a8` |
+| 1 | FabricXAccount | `0xec852c51da5acaad40cd29fe29ba687190d8d9e1` |
+| 2 | SessionKeyManagerV2 | `0xf167652096d8972170a6fee5ed31bd6bf19afcfd` |
+| 4 | ASPReputation | `0x69b4d283af09d9d80aec92cb0782c4f020bb3b54` |
+| 4 | SLAEnforcement | `0x79e040142312cea58da5f930818cc33eb25f9ad8` |
+| 4 | EscrowPayments | `0xdd907baff577fbb8033a7fa51e15aea7db4ee5eb` |
 
 All deployed from `0x7609...a79d` — [view all on X Layer Explorer](https://www.okx.com/web3/explorer/xlayer-testnet/address/0x76092779c93a9a303aD2Ad2C4606415040CDa79d)
 
