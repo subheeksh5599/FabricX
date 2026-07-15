@@ -14,10 +14,10 @@ function Footer() {
           <div>
             <h4 className="text-white text-sm font-medium mb-3">Protocol</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors">Docs</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contracts</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">SDK</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Playground</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">Docs</a></li>
+              <li><a href="#architecture" className="hover:text-white transition-colors">Contracts</a></li>
+              <li><a href="#playground" className="hover:text-white transition-colors">SDK</a></li>
+              <li><a href="#playground" className="hover:text-white transition-colors">Playground</a></li>
             </ul>
           </div>
           <div>
@@ -36,9 +36,8 @@ function Footer() {
             &copy; {new Date().getFullYear()} FabricX. Built for OKX.AI Genesis Hackathon.
           </p>
           <div className="flex items-center gap-6 text-sm">
-            <a href="#" className="hover:text-white transition-colors">GitHub</a>
-            <a href="#" className="hover:text-white transition-colors">X (Twitter)</a>
-            <a href="#" className="hover:text-white transition-colors">Discord</a>
+            <a href="https://github.com/subheeksh5599/FabricX" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+            <a href="https://x.com/KomariS18774" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">X (Twitter)</a>
           </div>
         </div>
       </div>

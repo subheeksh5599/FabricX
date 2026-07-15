@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 function InfoSection() {
   return (
-    <section className="bg-[#F5F5F5] px-6 py-24">
+    <section id="features" className="bg-[#F5F5F5] px-6 py-24">
       <div className="max-w-[88rem] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 items-start">
           <div>

@@ -1,5 +1,10 @@
 
-const navLinks = ["Docs", "Contracts", "SDK", "Playground"];
+const navLinks = [
+  { label: "Docs", href: "#features" },
+  { label: "Contracts", href: "#architecture" },
+  { label: "SDK", href: "#playground" },
+  { label: "Playground", href: "#playground" },
+];
 
 function Navbar() {
   return (
@@ -12,11 +17,11 @@ function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
+              key={link.label}
+              href={link.href}
               className="text-base text-white/70 hover:text-white font-medium transition-colors duration-200"
             >
-              {link}
+              {link.label}
             </a>
           ))}
         </div>

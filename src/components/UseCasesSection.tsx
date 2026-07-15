@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 function UseCasesSection() {
   return (
-    <section className="bg-[#F5F5F5] px-6 py-24">
+    <section id="architecture" className="bg-[#F5F5F5] px-6 py-24">
       <div className="max-w-[88rem] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         <div className="md:pr-12 md:pt-2">
           <p className="text-black/60 text-sm mb-2">Built for OKX.AI</p>
