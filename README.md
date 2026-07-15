@@ -239,28 +239,22 @@ npm run server:start  # Starts on stdio (MCP transport)
 
 All deployed from `0x7609...a79d` — [view all on X Layer Explorer](https://www.okx.com/web3/explorer/xlayer-testnet/address/0x76092779c93a9a303aD2Ad2C4606415040CDa79d)
 
-### Phase 3 — Multi-Chain (Ready to Deploy)
+### Phase 3 — Multi-Chain (Deployed)
 
-Deploy FabricX to any EVM chain with a single command. RPCs pre-configured:
+Same deterministic addresses across all chains from deployer `0x7609...a79d` nonce 0:
 
+| Chain | Chain ID | SessionKeyManager | FabricXAccount |
+|-------|----------|-------------------|----------------|
+| X Layer Testnet | 1952 | `0xf1b32d46...` | `0x61314ce9...` |
+| Ethereum Sepolia | 11155111 | `0xdaaa7d3a...` | `0x119dbff5...` |
+| OP Sepolia | 11155420 | `0xdaaa7d3a...` | `0x119dbff5...` |
+| Base Sepolia | 84532 | `0xdaaa7d3a...` | `0x119dbff5...` |
+
+Deploy to any EVM chain with one command:
 ```bash
-# Deploy to Arbitrum Sepolia
-npm run contracts:deploy:arbitrum
-
-# Deploy to Base Sepolia
-npm run contracts:deploy:base
-
-# Deploy to OP Sepolia
-npm run contracts:deploy:op
-```
-
-**Multi-chain deployment prerequisites:**
-1. Get testnet ETH from the respective faucets:
-   - [Alchemy Arbitrum Sepolia Faucet](https://www.alchemy.com/faucets/arbitrum-sepolia)
-   - [Alchemy Base Sepolia Faucet](https://www.alchemy.com/faucets/base-sepolia)
-   - [Alchemy OP Sepolia Faucet](https://www.alchemy.com/faucets/optimism-sepolia)
-2. Fund the deployer wallet `0x7609...a79d` on each chain
-3. Run the deploy command — addresses are deterministic per chain
+npm run contracts:deploy:arbitrum  # Arbitrum Sepolia (needs faucet)
+npm run contracts:deploy:base       # Base Sepolia ✅ deployed
+npm run contracts:deploy:op         # OP Sepolia ✅ deployed
 
 ### SessionKeyManager
 
@@ -413,7 +407,7 @@ FabricX/
 |-------|------|--------|
 | **Phase 1** — Hackathon MVP | Scoped session keys, MCP server, OKX DEX integration, x402 monetization | ✅ Done |
 | **Phase 2** — Expanded Actions | Multi-token spend tracking, gas abstraction, bridge tool, SessionKeyManagerV2 | ✅ Done |
-| **Phase 3** — Multi-chain | Deploy to ETH L2s (Arbitrum, Base, OP); pre-configured RPCs + deploy scripts | 🟡 Ready |
+| **Phase 3** — Multi-chain | Deployed to Sepolia, OP Sepolia, Base Sepolia; deterministic addresses | ✅ Done |
 | **Phase 4** — Agent Marketplace | On-chain ASP reputation, SLA enforcement, escrow-based task payments | ✅ Done |
 
 ---

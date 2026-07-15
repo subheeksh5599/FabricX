@@ -19,6 +19,11 @@ const config: HardhatUserConfig = {
       accounts: [PRIVATE_KEY],
     },
     // Phase 3: Multi-chain deployments
+    sepolia: {
+      url: process.env.SEPOLIA_RPC || "https://ethereum-sepolia.publicnode.com",
+      chainId: 11155111,
+      accounts: [PRIVATE_KEY],
+    },
     arbitrum_sepolia: {
       url: process.env.ARBITRUM_SEPOLIA_RPC || "https://sepolia-rollup.arbitrum.io/rpc",
       chainId: 421614,
