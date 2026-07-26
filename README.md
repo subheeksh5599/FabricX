@@ -3,7 +3,9 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Network-X_Layer_Testnet-0C0C0D?style=for-the-badge&logo=ethereum">
+  <img src="https://img.shields.io/badge/Network-X_Layer_Mainnet-0C0C0D?style=for-the-badge&logo=ethereum">
+  <img src="https://img.shields.io/badge/OKX_Agent-4893-6C5CE7?style=for-the-badge">
+  <img src="https://img.shields.io/badge/x402_Check-passing-brightgreen?style=for-the-badge">
   <img src="https://img.shields.io/badge/Protocol-ERC--4337-2B2644?style=for-the-badge">
   <img src="https://img.shields.io/badge/Monetization-x402-1A1A1A?style=for-the-badge">
   <img src="https://img.shields.io/badge/MCP-Server-2B2644?style=for-the-badge">
@@ -24,7 +26,8 @@
 </p>
 
 <p align="center">
-  <a href="https://fabricx-ten.vercel.app"><strong>🔗 Live Demo</strong></a> &bull;
+  <a href="https://fabricx-ten.vercel.app"><strong>🔗 Landing</strong></a> &bull;
+  <a href="https://fabricx-api.187.127.137.136.sslip.io/api/trending"><strong>⚡ API (Production)</strong></a> &bull;
   <a href="https://github.com/subheeksh5599/FabricX"><strong>📦 GitHub</strong></a> &bull;
   <a href="#the-problem">Problem</a> &bull;
   <a href="#the-solution">Solution</a> &bull;
@@ -79,9 +82,14 @@ User posts task ──> ASP agent bids & wins ──> FabricX provisions session
 
 ## Live Demo
 
-**Production URL:** [https://fabricx-ten.vercel.app](https://fabricx-ten.vercel.app)
+**Landing Page:** [https://fabricx-ten.vercel.app](https://fabricx-ten.vercel.app)
 
-### Try the API
+**Production API (OKX Agent #4893):** [https://fabricx-api.187.127.137.136.sslip.io](https://fabricx-api.187.127.137.136.sslip.io/api/trending)
+
+> ✅ x402-check: valid — token: USDT, network: eip155:196 (X Layer Mainnet), amount: 1.0 USDT
+> ✅ validate-listing: pass=true, findings=[]
+
+### Try the API (x402 Payment Required)
 
 ```bash
 # Get trending tokens
